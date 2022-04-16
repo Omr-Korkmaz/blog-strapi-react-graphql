@@ -12,8 +12,8 @@ function App() {
   <SiteHeader />
         <Routes>
           <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/Details" element={<Details/>}/>
-          <Route exact path="/Category" element={<Category/>}/>
+          <Route exact path="/details/:id" element={<Details/>}/>
+          <Route exact path="/category/:id" element={<Category/>}/>
           {/* <Route path="*" element={<NotFound/>}/> */}
         </Routes>
     </Router>
