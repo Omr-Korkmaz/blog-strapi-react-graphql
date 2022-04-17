@@ -19,6 +19,7 @@
     },
     "rating": {
       "type": "integer",
+      "unique": false,
       "required": true,
       "min": 0,
       "max": 10
@@ -26,16 +27,6 @@
     "body": {
       "type": "richtext",
       "required": true
-    },
-    "image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
     }
   }
 }
