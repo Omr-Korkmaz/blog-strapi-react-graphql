@@ -3,8 +3,6 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  useQuery,
-  gql,
 } from "@apollo/client";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
