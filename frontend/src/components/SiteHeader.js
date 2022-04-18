@@ -21,13 +21,13 @@ const SiteHeader = () => {
   if (error) return <p>Error fetching categories</p>;
   console.log("Category", data);
   return (
-    <div>
+    <div className="site-header">
       <Link to="/">
         {" "}
         <h1>Reviews</h1>
       </Link>
 
-      <nav>
+      <nav className="categories">
         <span>Filter it by category:</span>
         {data.categories.data.map((category) => (
           <Link key={category.id} to={`/category/${category.id}`}>
