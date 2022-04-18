@@ -11,7 +11,18 @@ const REVIEWS = gql`
         attributes{
           title,
           rating,
-          body
+          body,
+          image{
+            data{
+         
+              attributes{
+                url,
+                name
+              
+              }
+            id}
+            
+          }
         }
         id
       }
@@ -32,15 +43,17 @@ export default function Homepage() {
   if (error) return <p>Error, something is wrong</p>
 
   console.log(data.reviews.data)
+  console.log('Image URL', data.reviews.data[1].attributes.image.data[0].attributes.url)
+
 
   return (
     <div>
       {data.reviews.data.map(review => (
         <div key={review.id} >
-          
+
           <div >{review.attributes.rating}</div>
           <h2>{review.attributes.title}</h2>
-          
+          <img src={`http://localhost:1337${review.attributes.image.data[0].attributes.url}`} alt='resim'/>
 
           <p>{review.attributes.body.substring(0, 250)}...</p>
           <Link to={`/details/${review.id}`}>Read more</Link>
@@ -49,3 +62,4 @@ export default function Homepage() {
     </div>
   )
 }
+{/* <img src={`http://localhost:1337/${review.attributes.image.data[0].attributes.url}`} alt='resim'/> */}

@@ -12,7 +12,19 @@ const REVIEW = gql`
         attributes{
           title,
           rating,
-          body
+          body,
+          image{
+            data{
+         
+              attributes{
+                url,
+                name
+              
+              }
+            id}
+            
+          }
+         
          
         }
         id
@@ -39,14 +51,18 @@ export default function ReviewDetails() {
 
   console.log('detailsssss', data)
 
+  
+
   return (
     <div >
+     <img src={`http://localhost:1337${data.review.data.attributes.image.data[0].attributes.url}`} alt='resim'/>
+
       <div >{data.review.data.attributes.rating}</div>
       <h2>{data.review.data.attributes.title}</h2>
 
       
-
       <p>{data.review.data.attributes.body}</p>
     </div>
   )
 }
+

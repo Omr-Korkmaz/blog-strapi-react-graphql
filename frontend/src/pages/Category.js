@@ -23,6 +23,17 @@ const CATEGORY = gql`
                     id
                   }
                 }
+                image{
+                  data{
+               
+                    attributes{
+                      url,
+                      name
+                    
+                    }
+                  id}
+                  
+                }
               }
               id
             }
@@ -52,10 +63,13 @@ export default function Category() {
           <div className="rating">{review.attributes.rating}</div>
           <h2>{review.attributes.title}</h2>
 
+
+
           {review.attributes.categories.data.map(c => (
             <small key={c.id}>{c.attributes.name}</small>
           ))}
-          
+                    <img src={`http://localhost:1337${review.attributes.image.data[0].attributes.url}`} alt='resim'/>
+
           <p>{review.attributes.body.substring(0, 200)}...</p>
           <Link to={`/details/${review.id}`}>Read more</Link>
         </div>
