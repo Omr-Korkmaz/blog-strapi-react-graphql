@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Featured = () => {
   const [index, setIndex] = useState(0);
@@ -20,7 +21,7 @@ const Featured = () => {
   return (
     <div >
       <div style={{ left: 0 }} onClick={()=>handleArrow("left")}>
-        <img src="https://images.unsplash.com/photo-1569041032556-6485fc04aff0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=87&q=80" alt="" layout="fill" objectFit="contain"/>
+        <ArrowBackIcon />
       </div>
       <div style={{transform:`translateX(${-100*index}vw)`}}>
         {images.map((img, i) => (
