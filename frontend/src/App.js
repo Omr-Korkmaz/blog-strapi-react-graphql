@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Details from "./pages/Details";
 import Category from "./pages/Category";
 import SiteHeader from "./components/SiteHeader";
+import SlideHeader from './components/SlideHeader';
 
 //apollo connection which is taken from official website apollo
 const client = new ApolloClient({
@@ -20,6 +21,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router className="App">
         <SiteHeader />
+        <SlideHeader />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/details/:id" element={<Details />} />
