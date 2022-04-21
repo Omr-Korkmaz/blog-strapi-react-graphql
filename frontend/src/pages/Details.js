@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import './Details.css'
 import { useQuery, gql } from "@apollo/client";
 import useFetch from "../hooks/useFetch";
 
@@ -41,7 +42,7 @@ export default function ReviewDetails() {
   console.log("detailsssss", data);
 
   return (
-    <div className="review-card">
+    <div className="review-card-detail">
       <img
         className="image"
         src={`http://localhost:1337${data.review.data.attributes.image.data[0].attributes.url}`}

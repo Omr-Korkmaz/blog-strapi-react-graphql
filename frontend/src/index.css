@@ -3,6 +3,7 @@ body {
   margin: 0px;
   font-family: "Poppins";
   background: #f1f1f1;
+  box-sizing: border-box;
 }
 h1,h2,h3,h4 {
   font-weight: 500;
@@ -13,55 +14,7 @@ h1,h2,h3,h4 {
   width: 100%;
   max-width: 1200px;
   padding: 20px;
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-  color: #8e2ad6;
-  border-bottom: 1px dotted;
-}
-.site-header h1 {
-  font-size: 1.5em;
-  color: #7e271a;
-  padding-bottom: 10px;
-  border-bottom: 2px solid;
-}
-.site-header .categories {
-  text-align: right;
-}
-.site-header .categories a {
-  margin-left: 10px;
-}
-
-/* review list */
-.review-card {
-  background: white;
-  margin: 60px auto;
-  padding: 1px 20px 20px 90px;
-  position: relative;
-  width: 300px;
-}
-.rating {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background: #e24b18;
-  font-size: 1em;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  color: white;
-}
-.review-card h2 {
-  margin-bottom: 2;
-}
-.review-card small {
-  margin-right: 10px;
-  color: #777;
-}
-.image{
-  width: 200px;
-  height: 170px;
+ 
 }
 
 .container{

@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import './Home.css'
 // import useFetch from '../hooks/useFetch'
 import { Link } from "react-router-dom";
 
