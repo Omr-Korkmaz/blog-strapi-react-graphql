@@ -21,7 +21,6 @@ function App() {
     <ApolloProvider client={client}>
       <Router className="App">
         <SiteHeader />
-        <SlideHeader />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/details/:id" element={<Details />} />

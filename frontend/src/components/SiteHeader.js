@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import "./SiteHeader.css";
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
@@ -21,20 +22,25 @@ const SiteHeader = () => {
   if (error) return <p>Error fetching categories</p>;
   console.log("Category", data);
   return (
-    <div className="site-header">
-      <Link to="/">
-        {" "}
-        <h1>Reviews</h1>
-      </Link>
-
-      <nav className="categories">
+    <div className="navbar">
+      <span className="navbar__logo">
+        <Link className="navbar__link" to="/">
+          {" "}
+          <h1>Blog Posts</h1>
+        </Link>
+      </span>
+      <div className="navbar__items">
         <span>Filter it by category:</span>
         {data.categories.data.map((category) => (
-          <Link key={category.id} to={`/category/${category.id}`}>
+          <Link
+            className="navbar__link"
+            key={category.id}
+            to={`/category/${category.id}`}
+          >
             {category.attributes.name}
           </Link>
         ))}
-      </nav>
+      </div>
     </div>
   );
 };
