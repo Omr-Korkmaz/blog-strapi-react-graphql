@@ -41,6 +41,10 @@ const SiteHeader = () => {
           </Link>
         ))}
       </div>
+      <Link className="navbar__btn" to="/">
+          {" "}
+          <h1>Fake Create Posts</h1>
+        </Link>
     </div>
   );
 };

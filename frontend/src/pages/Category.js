@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
-import './Category.css'
 import { useParams, Link } from "react-router-dom";
 
 const CATEGORY = gql`
@@ -61,7 +60,7 @@ export default function Category() {
       {data.category.data.attributes.reviews.data.map((review) => (
 
         <div key={review.id} className="review-card">
-          <div className="rating">{review.attributes.rating} Starts</div>
+          <div className="review-card__rating">{review.attributes.rating} Starts</div>
 
           <h2>{review.attributes.title}</h2>
           <div> categories :
@@ -70,7 +69,7 @@ export default function Category() {
           ))}
 </div>
           <img
-            className="image"
+            className="review-card__image"
             src={`http://localhost:1337${review.attributes.image.data[0].attributes.url}`}
             alt="resim"
           />

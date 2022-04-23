@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
-import './Home.css'
 // import useFetch from '../hooks/useFetch'
 import { Link } from "react-router-dom";
 
@@ -45,13 +44,15 @@ export default function Homepage() {
   return (
     <div className="container">
       {data.reviews.data.map((review) => (
+
         <div key={review.id} className="review-card">
-          <div className="rating">{review.attributes.rating} rating</div>
-          <h2>{review.attributes.title}</h2>
-          <img className="image"
+          <div className="review-card__rating">{review.attributes.rating} rating</div>
+          <img className="review-card__image"
             src={`http://localhost:1337${review.attributes.image.data[0].attributes.url}`}
             alt="resim"
           />
+          <h2 >{review.attributes.title}</h2>
+         
 
           <p>{review.attributes.body.substring(0, 250)}...</p>
           <Link to={`/details/${review.id}`}>Read more</Link>

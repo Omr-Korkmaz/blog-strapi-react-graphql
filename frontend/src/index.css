@@ -1,24 +1,70 @@
-
 body {
   margin: 0px;
+  padding: 0px;
   font-family: "Poppins";
   background: #f1f1f1;
   box-sizing: border-box;
 }
-h1,h2,h3,h4 {
-  font-weight: 500;
-}
+
 .App {
   font-size: 1.2em;
   margin: 10px auto;
   width: 100%;
   max-width: 1200px;
-  padding: 20px;
- 
+  padding: 10px;
 }
 
-.container{
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+}
+
+.review-card {
+  padding: 15px;
+  background: white;
+  margin: 60px auto;
+  position: relative;
+  width: 300px;
+}
+
+.review-card h2 {
+  margin-bottom: 2;
+  text-align: center;
+}
+
+.review-card:hover {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.review-card__detail {
+  background: rgb(255, 255, 255);
+  margin: 10px;
+  padding: 1px 20px 20px 90px;
+  position: relative;
+}
+
+.review-card__rating {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #e24b18;
+  font-size: 1em;
+  width: 60px;
+  height: 40px;
+  align-items: center;
+  color: white;
+}
+
+.review-card__image {
+  height: 170px;
+  margin-top: 5px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.category-name {
+  margin: 5px;
 }
